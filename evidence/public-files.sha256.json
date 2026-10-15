@@ -9,13 +9,13 @@
   "THIRD_PARTY.md": "5b5b2f272c5b3b857d3a9925974d29d07de996eaf14fef66f7a2d3428e87c624",
   "docs/architecture-and-lineage.ko.md": "fc971770f99fc562c0c7baac62aed9ab5f4b5bba4217e4cec7d226f8a83316bb",
   "docs/blink-story.ko.md": "09c8b972d9e53ad954940d350052c6f7484216b59aba20a87db91ccefb30a413",
-  "docs/editorial-review.ko.md": "4a5fbd779ccefa797836c5bdeedfb645ce93c8a009ad4c4a9dbf554526ddfa91",
+  "docs/editorial-review.ko.md": "d3d73b0971dba1c656d1d45bcc59e3a63698be13dabbffb8601deccc0d718bc9",
   "docs/evidence-and-limits.ko.md": "050ac52e849683df760bb96eaabcdd03346013adc522d1dd0dbc0f5158c3dd8c",
   "docs/gaze-story.ko.md": "b6eb09c898f7ce7b9eabb55dd2fdd3e98eb0a6f9efef79beacb42d178e2b27a4",
   "evidence/idea-coverage.json": "15e5cc160207b2b321db4c39dc7fb30800b55aa2397022c74b375d53f9c6149d",
-  "evidence/publication-review.json": "abfe60299faba2a9f4e5b4dc9843971e8d13958ae1d3fb8428f82b7896395778",
+  "evidence/publication-review.json": "a9ebef30ad7a099d46809f2a9a515a758d1c179877e7fa43fa9df5edf8da104a",
   "evidence/selected-results.json": "7ab8a328169d797b7753f1b638a40a6d851d908e00de48e7ac92f3d55ea2eb9a",
-  "reports/blink-project-record-ko.pdf": "27691d6a0b423c107ed115b91dadfcaf94ad6ef7476adc2959b4f9d0a630bc43",
+  "reports/blink-project-record-ko.pdf": "df8d68168318b926be900453f414e6b3a3e2b20543c98f45a37601330f3fcd37",
   "scripts/check_public_case_study.py": "bebd38dbe5d97644c16944006660cefe62fe79aa71e27a43e8f6fc76a7ced250",
   "tests/test_public_case_study.py": "ed63cfedb3e0d562d9605c0f7d02d29e9eede0fbd50f8dcf4d5ab32e7300a859"
 }

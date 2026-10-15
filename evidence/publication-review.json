@@ -1,7 +1,7 @@
 {
   "record_date": "2026-10-15",
   "scope": "public writing and PDF validation only",
-  "pdf_pages": 19,
+  "pdf_pages": 18,
   "gaze_scenes": 22,
   "narrative_paragraphs_checked": 156,
   "author_idea_items_checked": 31,
@@ -18,7 +18,8 @@
     "https://github.com/cheolgyu/blink-engineering-case-study/blob/main/docs/evidence-and-limits.ko.md",
     "https://github.com/cheolgyu/blink-engineering-case-study/blob/main/docs/editorial-review.ko.md"
   ],
-  "pdf_sha256": "27691d6a0b423c107ed115b91dadfcaf94ad6ef7476adc2959b4f9d0a630bc43",
+  "submission_editorial_guidance_removed": true,
+  "pdf_sha256": "df8d68168318b926be900453f414e6b3a3e2b20543c98f45a37601330f3fcd37",
   "visual_review": {
     "page_numbers": [
       1,
@@ -38,8 +39,7 @@
       15,
       16,
       17,
-      18,
-      19
+      18
     ],
     "checks": [
       "readable Korean",
