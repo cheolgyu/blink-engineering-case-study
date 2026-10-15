@@ -51,8 +51,8 @@
 
 - 기록 시점: 2026-10-08
 - 자료 범위: 과거 좌표 947행과 별도 새 실측 346행
-- 측정: 실제 얼굴 각도 연결 여부
-- 한계: 수집 연결 수정이며 모델 정확도 증가율이 아니다.
+- 측정: 얼굴 변환행렬에서 계산한 자세 추정값의 연결 여부
+- 한계: 수집 연결 수정이며 모델 정확도 증가율이 아니다. 외부 장비로 잰 얼굴 각도 정답이 아니다.
 - 원천: S06
 
 ```json
@@ -102,10 +102,10 @@
 ## eyes
 
 - 기록 시점: 2026-10-12
-- 자료 범위: 한 사용자의 여섯 촬영 개발 비교, 같은 2025관측에서 입력 연결
+- 자료 범위: 한 사용자, 입력 복구 2025관측 중 여섯 촬영 731평가관측의 개발 비교
 - 측정: 촬영·표적 균형 좌중립우 점수
 - 한계: 중립·먼 거리 퇴행. 의학적 주시안이나 새 사용자 정확도 아님.
-- 원천: S16
+- 원천: S16, S32
 
 ```json
 {
@@ -382,3 +382,81 @@ SHA-256: `ec6d6267bbe6278a547910b166bdcc189c62a818532e54043a2588ff5c788a10`
 문서: `docs/patent/CURRENT.md`
 
 SHA-256: `c7fc41599d3e8acd771e8d6c11472482eb05f29b0c4edef4728149d6e09f31d0`
+
+### S29
+
+문서: `docs/research/gaze-blink-clutch-20261013-ko.md`
+
+SHA-256: `dd50411041f46354b9fbe5609c3eda0c6be7206c611c85a5b9fc0bf4e241a48c`
+
+### S30
+
+문서: `docs/research/gaze-coordinate-feasibility-20261008-ko.md`
+
+SHA-256: `d7e6b6e4c0c7f70474f0987bc5dde83a7905a41fecec2b99660db79b8db825a4`
+
+### S31
+
+문서: `docs/research/gaze-horizontal-high-resolution-20261012-ko.md`
+
+SHA-256: `b90c7a189738614f78ffb54dacdbde57c4149f199a860260c26cdcd4ed88eefa`
+
+### S32
+
+문서: `docs/research/gaze-eye-neutral-scale-20261012-ko.md`
+
+SHA-256: `188f5733dae39371379c210aa1d71643576b3969e585bd55fc1492310855396f`
+
+### S33
+
+문서: `docs/audits/20261007-sm-s-held-cadence-ko.md`
+
+SHA-256: `ed9a9e45873de545ea1007136010575ea2a0e5694a7d99a2324f4250b446f7f6`
+
+### S34
+
+문서: `docs/audits/20261006-roll-unlock-practice-ownership.md`
+
+SHA-256: `e6fe841896d0c4bc041fe942a5a56260696ae1b2390743982bad29b5e91eb815`
+
+### S35
+
+문서: `docs/audits/20260906-inference-capacity-root-fix.md`
+
+SHA-256: `5a2588b17ccd4b71a32026d69a48f96e49601b6a2c8a8b927f0432a2feff165c`
+
+### S36
+
+문서: `docs/audits/20260906-variant-boundaries.md`
+
+SHA-256: `f5a3e8835f22abe2f9f9a2ba4f1c49b8fd5ffe035a32a35ae045b62829b5a09d`
+
+### S37
+
+문서: `docs/play-release/r8-smoke-approval-gate-ko.md`
+
+SHA-256: `090245c2519e01f8a559d58d36955f2df63190980511d1349420f26f0bf7174b`
+
+### S38
+
+문서: `docs/play-release/reading-native-20261013-ko.md`
+
+SHA-256: `a4068d0940982cf6f7377842ef8b1a899e64b1651814df60a2c115a7352808bd`
+
+### S39
+
+문서: `docs/codex-work-history-analysis-2026-08-01-ko.md`
+
+SHA-256: `95a90cd2479b6854a80b362cc494989f3b3e7b4e9ea482a801052ed082b730e9`
+
+### S40
+
+문서: `docs/operations/reading-practice-native-meta-20261013-ko.md`
+
+SHA-256: `a5f25578de7d1606e1329f14484165231a8211bcbeeee8f02b48708a7a18d100`
+
+### S41
+
+문서: `docs/audits/20261007-current-model-input-replay-ko.md`
+
+SHA-256: `f5d63145b29e66c1108cc02031ea3cb744e0458ee6d320db9023ee09dd140159`

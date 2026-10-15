@@ -14,6 +14,7 @@ ALLOWED = frozenset({
     'SECURITY.md', 'THIRD_PARTY.md', 'docs/blink-story.ko.md',
     'docs/gaze-story.ko.md', 'docs/architecture-and-lineage.ko.md',
     'docs/evidence-and-limits.ko.md', 'evidence/selected-results.json',
+    'docs/editorial-review.ko.md', 'evidence/idea-coverage.json',
     'evidence/publication-review.json', MANIFEST, 'reports/blink-project-record-ko.pdf',
     'scripts/check_public_case_study.py', 'tests/test_public_case_study.py',
 })
@@ -99,6 +100,27 @@ def check_evidence(data):
     return errors
 
 
+def check_ideas(coverage, evidence, narrative):
+    errors = []
+    for flag in ('first_proposal_dates_independently_verified', 'exhaustive_conversation_inventory'):
+        if coverage.get(flag) is not False:
+            errors.append('Unverified idea-history scope: ' + flag)
+    items = coverage.get('items', [])
+    if [item.get('id') for item in items] != [f'I{n:02d}' for n in range(1, 32)]:
+        errors.append('Expected 31 ordered author decisions')
+    source_ids = {source['id'] for source in evidence['sources']}
+    normalized = re.sub(r'\s+', '', narrative)
+    for item in items:
+        if not item.get('author_idea') or not item.get('scope'):
+            errors.append('Missing idea attribution or scope')
+        if not item.get('sources') or set(item['sources']) - source_ids:
+            errors.append('Unknown idea source: ' + item['id'])
+        phrases = item.get('required_phrases', [])
+        if len(phrases) < 2 or any(re.sub(r'\s+', '', phrase) not in normalized for phrase in phrases):
+            errors.append('Idea wording missing from narrative: ' + item['id'])
+    return errors
+
+
 def check(root=ROOT):
     errors = []
     files = {}
@@ -123,7 +145,22 @@ def check(root=ROOT):
     for missing in ALLOWED - files.keys():
         errors.append('Missing public file: ' + missing)
     if 'evidence/selected-results.json' in files:
-        errors.extend(check_evidence(json.loads(files['evidence/selected-results.json'].read_text(encoding='utf-8'))))
+        evidence = json.loads(files['evidence/selected-results.json'].read_text(encoding='utf-8'))
+        errors.extend(check_evidence(evidence))
+        if 'evidence/idea-coverage.json' in files and 'docs/blink-story.ko.md' in files:
+            coverage = json.loads(files['evidence/idea-coverage.json'].read_text(encoding='utf-8'))
+            errors.extend(check_ideas(coverage, evidence, files['docs/blink-story.ko.md'].read_text(encoding='utf-8')))
+    if 'evidence/publication-review.json' in files:
+        review = json.loads(files['evidence/publication-review.json'].read_text(encoding='utf-8'))
+        pdf = files.get('reports/blink-project-record-ko.pdf')
+        if pdf and review.get('pdf_sha256') != sha256(pdf.read_bytes()).hexdigest():
+            errors.append('PDF differs from reviewed revision')
+        narrative_hashes = review.get('narrative_source_sha256', {})
+        if set(narrative_hashes) != {'docs/blink-story.ko.md', 'docs/gaze-story.ko.md'}:
+            errors.append('Missing reviewed narrative hashes')
+        for rel, expected in narrative_hashes.items():
+            if rel not in files or sha256(files[rel].read_bytes()).hexdigest() != expected:
+                errors.append('Narrative differs from reviewed PDF source: ' + rel)
     if 'docs/gaze-story.ko.md' in files:
         text = files['docs/gaze-story.ko.md'].read_text(encoding='utf-8')
         numbers = re.findall(r'^## (\d{2}) ', text, re.M)

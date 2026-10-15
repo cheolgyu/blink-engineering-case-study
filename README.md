@@ -11,6 +11,7 @@
 - [이력서 첨부용 PDF](reports/blink-project-record-ko.pdf): 프로젝트 정보표, 목차, 이야기, 기술 선택과 주장 범위를 묶은 상세 원고
 - [실험 계보와 시스템 경계](docs/architecture-and-lineage.ko.md)
 - [숫자를 읽는 방법과 근거](docs/evidence-and-limits.ko.md)
+- [아이디어 누락과 표현 재검토](docs/editorial-review.ko.md): 주요 제안·결정 31개의 본문 대응과 수정 사항
 - [English Summary](README.en.md)
 
 ## 프로젝트 정보
@@ -22,7 +23,7 @@
 | 역할 | 문제 정의, 사용 경험에 따른 가설 제안, 기기 입력·재현, 우선순위와 채택 판단. 구현·실험·문서화에 AI 코딩 도구 활용 |
 | 기술 | Kotlin, Android 접근성·카메라, MediaPipe, Rust, Unity/C#, Python·PyTorch/CUDA, 자체 기하 커널과 시계열 비교 |
 | 제품과 연구 | BlinkRoll·BlinkPage·BlinkGame 출시 이력과 GazeLab·BlinkLine 연구를 구분 |
-| 현재 기록의 결론 | 일부 입력·성능·검증 구조는 개선. 촬영이 달라져도 자연스러운 공통 시선 추적은 미완성 |
+| 기록 당시의 결론 | 일부 입력·성능·검증 구조는 개선. 촬영이 달라져도 자연스러운 공통 시선 추적은 미완성 |
 
 기간은 매일의 연속 근무 시간을 뜻하지 않습니다. 앱별·실험별 시점과 적용 범위는 본문을 따릅니다. 이 저장소 작성일에 새 모델 학습이나 Play 출시를 한 것은 아닙니다.
 

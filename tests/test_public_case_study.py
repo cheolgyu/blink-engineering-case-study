@@ -61,6 +61,30 @@ class PublicationChecks(unittest.TestCase):
     def test_repository_inventory_and_manifest(self):
         self.assertEqual(guard.check(), [])
 
+    def ideas(self):
+        return json.loads((ROOT / 'evidence/idea-coverage.json').read_text(encoding='utf-8'))
+
+    def narrative(self):
+        return (ROOT / 'docs/blink-story.ko.md').read_text(encoding='utf-8')
+
+    def test_author_ideas_are_connected_to_story(self):
+        self.assertEqual(guard.check_ideas(self.ideas(), self.evidence(), self.narrative()), [])
+
+    def test_cannot_claim_exhaustive_history(self):
+        data = self.ideas()
+        data['exhaustive_conversation_inventory'] = True
+        self.assertTrue(guard.check_ideas(data, self.evidence(), self.narrative()))
+
+    def test_removed_idea_wording_is_detected(self):
+        data = self.ideas()
+        data['items'][0]['required_phrases'] = ['not-a-phrase-in-the-narrative', 'not-present-either']
+        self.assertTrue(guard.check_ideas(data, self.evidence(), self.narrative()))
+
+    def test_unknown_idea_source_is_detected(self):
+        data = self.ideas()
+        data['items'][0]['sources'] = ['not-a-source']
+        self.assertTrue(guard.check_ideas(data, self.evidence(), self.narrative()))
+
 
 if __name__ == '__main__':
     unittest.main()

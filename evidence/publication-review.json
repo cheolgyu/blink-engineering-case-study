@@ -1,18 +1,24 @@
 {
   "record_date": "2026-10-15",
   "scope": "public writing and PDF validation only",
-  "pdf_pages": 18,
+  "pdf_pages": 19,
   "gaze_scenes": 22,
-  "narrative_paragraphs_checked": 143,
+  "narrative_paragraphs_checked": 156,
+  "author_idea_items_checked": 31,
+  "narrative_source_sha256": {
+    "docs/blink-story.ko.md": "09c8b972d9e53ad954940d350052c6f7484216b59aba20a87db91ccefb30a413",
+    "docs/gaze-story.ko.md": "b6eb09c898f7ce7b9eabb55dd2fdd3e98eb0a6f9efef79beacb42d178e2b27a4"
+  },
   "all_a4": true,
   "toc_on_one_page": true,
   "external_links_checked": [
     "https://github.com/cheolgyu/blink-engineering-case-study",
     "https://github.com/cheolgyu/blink-engineering-case-study/blob/main/docs/gaze-story.ko.md",
     "https://github.com/cheolgyu/blink-engineering-case-study",
-    "https://github.com/cheolgyu/blink-engineering-case-study/blob/main/docs/evidence-and-limits.ko.md"
+    "https://github.com/cheolgyu/blink-engineering-case-study/blob/main/docs/evidence-and-limits.ko.md",
+    "https://github.com/cheolgyu/blink-engineering-case-study/blob/main/docs/editorial-review.ko.md"
   ],
-  "pdf_sha256": "b2262d3c164bd8ddb34d9ac169fef365a23abc4c2d8784bac169e8aa08f4c7d4",
+  "pdf_sha256": "27691d6a0b423c107ed115b91dadfcaf94ad6ef7476adc2959b4f9d0a630bc43",
   "visual_review": {
     "page_numbers": [
       1,
@@ -32,7 +38,8 @@
       15,
       16,
       17,
-      18
+      18,
+      19
     ],
     "checks": [
       "readable Korean",
