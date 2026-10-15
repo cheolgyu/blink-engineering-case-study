@@ -1,0 +1,51 @@
+{
+  "record_date": "2026-10-15",
+  "scope": "public writing and PDF validation only",
+  "pdf_pages": 18,
+  "gaze_scenes": 22,
+  "narrative_paragraphs_checked": 143,
+  "all_a4": true,
+  "toc_on_one_page": true,
+  "external_links_checked": [
+    "https://github.com/cheolgyu/blink-engineering-case-study",
+    "https://github.com/cheolgyu/blink-engineering-case-study/blob/main/docs/gaze-story.ko.md",
+    "https://github.com/cheolgyu/blink-engineering-case-study",
+    "https://github.com/cheolgyu/blink-engineering-case-study/blob/main/docs/evidence-and-limits.ko.md"
+  ],
+  "pdf_sha256": "b2262d3c164bd8ddb34d9ac169fef365a23abc4c2d8784bac169e8aa08f4c7d4",
+  "visual_review": {
+    "page_numbers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18
+    ],
+    "checks": [
+      "readable Korean",
+      "no clipping or overlap",
+      "TOC fits one page",
+      "reference-style information and comparison tables"
+    ]
+  },
+  "reference_format": "user-supplied KullChip project record PDF; visual structure, not copied project claims",
+  "not_performed": [
+    "model training",
+    "device runtime tests",
+    "Play release",
+    "independent physical gaze measurement"
+  ]
+}
